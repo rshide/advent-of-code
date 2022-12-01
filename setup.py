@@ -26,4 +26,15 @@ if __name__ == "__main__":
     Path(day_dir).mkdir(parents=True, exist_ok=True)
 
     for file_path in template_dir.iterdir():
-        shutil.copy(file_path, day_dir / file_path.name)
+        target_path = day_dir / file_path.name
+        resp = ""
+        if target_path.exists():
+            while resp not in ("y", "n"):
+                resp = (
+                    str(input("File already exists, copy anyways? (y or n)"))
+                    .lower()
+                    .strip()
+                )
+
+        if not target_path.exists() or resp == "y":
+            shutil.copy(file_path, target_path)

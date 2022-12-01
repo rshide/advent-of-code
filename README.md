@@ -1,3 +1,3 @@
 # advent-of-code
 
-python setup.py --year 2015 --day 1
+python setup.py 2015 1

@@ -20,7 +20,8 @@
             "console": "integratedTerminal",
             "justMyCode": true,
             "args": [
-                "--year", "2022", "--day", "2"
+                "2015",
+                "7"
             ]
         }
     ]

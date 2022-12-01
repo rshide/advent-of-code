@@ -2,7 +2,7 @@ import os
 
 
 def solution1(data):
-    return None
+    return sum([len(d) - len(eval(d)) for d in data])
 
 
 def solution2(data):
@@ -14,5 +14,5 @@ if __name__ == "__main__":
     with open(os.path.join(dir, "input.txt")) as file:
         data = file.read().splitlines()
 
-    print(f'Part 1: {solution1(data)}')
-    print(f'Part 2: {solution2(data)}')
+    print(solution1(data))
+    print(solution2(data))
