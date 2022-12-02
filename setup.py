@@ -10,13 +10,13 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
 
     parser.add_argument("year", type=int)
-    parser.add_argument("day", type=int)
+    parser.add_argument("day", type=str)
     args = parser.parse_args()
 
     if not (MIN_YEAR <= args.year <= MAX_YEAR):
         raise argparse.ArgumentTypeError("invalid year")
 
-    if not (1 <= args.day <= 31):
+    if not (1 <= int(args.day) <= 31):
         raise argparse.ArgumentTypeError("invalid day")
 
     base_path = Path(__file__).parent.absolute()
